@@ -1,0 +1,79 @@
+{
+  "name": "react-package-starter-kit",
+  "version": "1.0.0",
+  "description": "Clone and create your own react package",
+  "main": "lib/index.js",
+  "scripts": {
+    "start": "watch 'npm run build:lib' src",
+    "build:lib": "rimraf lib/* && babel src -d lib/",
+    "build:docs": "rimraf docs/* && cross-env NODE_ENV=production webpack --config webpack.config.docs.js",
+    "build": "npm run build:lib && npm run build:docs && npm run coverage",
+    "docs": "webpack-dev-server --config webpack.config.docs.js",
+    "prepare": "npm run build",
+    "flow": "flow",
+    "test": "jest",
+    "test:dev": "npm test -- --watchAll",
+    "coverage": "npm test -- --coverage",
+    "release": "np"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sudkumar/reactjs-package-starter-kit.git"
+  },
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "react",
+    "resize",
+    "observe"
+  ],
+  "author": "Sudhir Mitharwal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sudkumar/reactjs-package-starter-kit/issues"
+  },
+  "homepage": "https://sudkumar.github.io/reactjs-package-starter-kit",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0-beta.47",
+    "@babel/core": "^7.0.0-beta.54",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.47",
+    "@babel/preset-env": "^7.0.0-beta.47",
+    "@babel/preset-flow": "^7.0.0-beta.47",
+    "@babel/preset-react": "^7.0.0-beta.47",
+    "babel-core": "^7.0.0-0",
+    "babel-eslint": "^7.2.3",
+    "babel-jest": "^23.4.0",
+    "babel-loader": "^8.0.0-beta.4",
+    "babel-plugin-react-flow-props-to-prop-types": "^0.15.0",
+    "cross-env": "^5.2.0",
+    "eslint": "^4.13.1",
+    "eslint-config-react-app": "^2.0.1",
+    "eslint-plugin-flowtype": "^2.40.1",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jest": "^21.5.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.5.1",
+    "flow-bin": "^0.61.0",
+    "fs-extra": "^7.0.0",
+    "hard-source-webpack-plugin": "^0.11.1",
+    "html-webpack-inline-chunk-plugin": "^1.1.1",
+    "html-webpack-plugin": "^4.0.0-alpha",
+    "jest": "^23.4.1",
+    "np": "^2.18.3",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-hot-loader": "^4.3.3",
+    "regenerator-runtime": "^0.12.0",
+    "rimraf": "^2.6.2",
+    "uglifyjs-webpack-plugin": "^1.2.5",
+    "url": "^0.11.0",
+    "watch": "^1.0.2",
+    "webpack": "4",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "3"
+  },
+  "peerDependencies": {
+    "react": "^0.14.9 || ^15.3.0 || ^16.0.0-rc || ^16.0"
+  }
+}
